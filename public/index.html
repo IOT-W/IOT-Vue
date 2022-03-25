@@ -1,17 +1,239 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+</head>
+
+<body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+                Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
-  </body>
+</body>
+
 </html>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 宋体;
+    }
+
+    .input::-ms-clear {
+        display: none;
+    }
+
+    .BodyDiv {
+        background: #fff;
+        height: 500px
+    }
+
+    .form-control {
+        width: 100%;
+        height: 32px;
+        font-size: 13px;
+        line-height: 1.42857143;
+        color: #000000;
+        background-color: #ffffff;
+        background-image: none;
+        border: 1px solid #e4e4e4;
+        border-radius: 0px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    }
+
+    .form-control:focus {
+        border-color: rgba(104, 184, 40, 0.5);
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(104, 184, 40, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(104, 184, 40, 0.6);
+    }
+
+    .form-control::-moz-placeholder {
+        color: #777777;
+        opacity: 1;
+    }
+
+    .form-control:-ms-input-placeholder {
+        color: #777777;
+    }
+
+    .form-control::-webkit-input-placeholder {
+        color: #777777;
+    }
+
+    .form-control[disabled],
+    .form-control[readonly],
+    fieldset[disabled] .form-control {
+        cursor: not-allowed;
+        background-color: #eeeeee;
+        opacity: 1;
+    }
+
+    textarea.form-control {
+        height: auto;
+    }
+
+    .procedure {
+        height: 40%;
+        margin-top: 20px;
+    }
+
+    .procedure1 {
+        border: 1px solid rgb(51, 51, 51);
+        border-image: none;
+        width: 75px;
+        height: 100%;
+        margin-left: 10px;
+        float: left;
+    }
+
+    .procedure1d {
+        border: 1px solid rgb(51, 51, 51);
+        border-image: none;
+        width: 75px;
+        height: 100%;
+        float: left;
+    }
+
+    .procedure1a {
+        border: 1px solid rgb(51, 51, 51);
+        border-image: none;
+        width: 77px;
+        height: auto;
+        margin-left: 1px;
+        float: left;
+    }
+
+    .procedure1s {
+
+        height: 30px;
+        vertical-align: bottom;
+        padding-top: 15px;
+        text-align: center;
+        border-bottom-color: rgb(51, 51, 51);
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+    }
+
+    .procedure1sto {
+        padding: 4px 0px;
+        height: 60px;
+        text-align: center;
+        position: relative;
+    }
+
+    .procedure2 img {
+        width: 100%
+    }
+
+    .procedure2 {
+        width: 6%;
+        text-align: center;
+        padding-top: 35px;
+        margin-left: 10px;
+        float: left;
+    }
+
+    .dai {
+        width: 25px;
+        height: 25px;
+        right: 0px;
+        bottom: 0px;
+        position: absolute;
+    }
+
+    .procedure2s {
+        height: 100px;
+        text-align: center;
+        padding-top: 35px;
+        float: left;
+    }
+
+    .procedure1sto img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .changeHighlight BODY {
+        font-size: 12px;
+        font-family: 宋体;
+    }
+
+    TABLE {
+        border-collapse: collapse;
+        font-size: 12px;
+    }
+
+    .TdDisplay {
+        line-height: 15px;
+    }
+
+    P {
+        padding-right: 0px;
+        padding-left: 0px;
+        padding-bottom: 0px;
+        margin: 0px;
+        padding-top: 0px;
+        font-size: 12px;
+    }
+
+    TD {
+        padding-right: 0px;
+        padding-left: 2px;
+        padding-bottom: 0px;
+    }
+
+    TD.NoPadding {
+        padding-right: 0px;
+        padding-left: 0px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+
+    INPUT {
+        border: none;
+    }
+
+    INPUT.UL {
+        border-right: medium none;
+        border-top: medium none;
+        border-left: medium none;
+        border-bottom: #33ff33 1px solid;
+    }
+
+    .form-control[disabled],
+    .form-control[readonly],
+    fieldset[disabled] .form-control {
+        background: #fff;
+        border: none;
+    }
+
+    .form-control {
+        border: none;
+    }
+
+    TEXTAREA {
+        font-size: 12px;
+    }
+
+    tr {
+        line-height: 25px;
+    }
+</style>
