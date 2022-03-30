@@ -5,6 +5,11 @@ import Login from '../views/Login.vue'
 
 const routes = [
     {
+        path: '/',
+        name: 'Login',
+        component: Login
+    },
+    {
         path: '/Home',
         name: 'Home',
         component: Home
@@ -13,11 +18,6 @@ const routes = [
         path: '/Order',
         name: 'Order',
         component: Order
-    },
-    {
-        path: '/Login',
-        name: 'Login',
-        component: Login
     },
     {
         path: '/about',

@@ -1,93 +1,34 @@
 <template>
     <!-- 背景图 -->
     <div id="home">
-        <div style="width: 100%; height: 100%">
-            <div style="width: 60%; height: 700px; float: left">
-                <label
-                    style="
-                        font-size: 30px;
-                        color: #7590e7;
-                        font-weight: 600;
-                        float: left;
-                        position: relative;
-                        left: 20px;
-                        top: 20px;
-                    "
-                    >BPM Manage System</label
-                >
-            </div>
+        <div style="width: 100%; height: 100%" class="father">
             <div
+                class="son"
                 style="
                     border-radius: 25px;
-                    margin-top: 240px;
-                    margin-right: 120px;
-                    background: rgba(255, 255, 255, 0.2);
-                    float: right;
-                    width: 27%;
-                    height: auto;
+                    background: rgba(27, 33, 43, 0.2);
+                    width: 460px;
+                    height: 225px;
                     text-align: left;
                 "
             >
-                <div style="margin-top: 15px">
-                    <br />
-                    <label
-                        style="
-                            font-size: 27px;
-                            color: #ffffff;
-                            position: relative;
-                            left: 30px;
-                        "
-                        >Welcome To BPM Manage System !</label
-                    ><br />
-                    <label
-                        style="
-                            width: 100%;
-                            font-size: 17px;
-                            color: #b3b7be;
-                            position: relative;
-                            left: 30px;
-                        "
-                    >
-                        Please entr your account and log in...</label
-                    >
-                </div>
-                <div style="margin-top: 10px; width: 100%">
-                    <label
-                        style="
-                            font-size: 16px;
-                            position: relative;
-                            color: #54e9ab;
-                            left: 30px;
-                            float: left;
-                        "
-                        >Account：Your name</label
-                    ><br /><br />
-                    <label
-                        style="
-                            font-size: 16px;
-                            color: #54e9ab;
-                            float: left;
-                            position: relative;
-                            bottom: 15px;
-                            left: 30px;
-                        "
-                        >Password：The default password is ' '</label
-                    ><br />
-                </div>
-                <div style="margin-top: 5px; margin-bottom: 15px">
+                <div style="margin-top: 20px; margin-bottom: 15px">
                     <label
                         style="
                             position: relative;
+                            width: 90px;
                             left: 30px;
                             bottom: 5px;
                             color: #ffffff;
+                            text-align: left;
+                            display: inline-block;
                         "
-                        >Account</label
-                    ><br />
+                        >Account：</label
+                    >
                     <el-input
                         v-model="UserInfoData.userName"
                         size="large"
-                        style="position: relative; left: 30px; width: 85%"
+                        style="position: relative; left: 30px; width: 300px"
                         placeholder="Please input account"
                     >
                     </el-input
@@ -95,17 +36,20 @@
                     <label
                         style="
                             position: relative;
+                            width: 90px;
                             left: 30px;
                             bottom: 5px;
                             color: #ffffff;
+                            text-align: left;
+                            display: inline-block;
                         "
-                        >Password</label
-                    ><br />
+                        >Password：</label
+                    >
                     <el-input
                         v-model="UserInfoData.userPass"
                         type="password"
                         size="large"
-                        style="position: relative; left: 30px; width: 85%"
+                        style="position: relative; left: 30px; width: 300px"
                         placeholder="Please input password"
                     >
                     </el-input
@@ -150,7 +94,7 @@ export default {
     data() {
         return {
             baseUrl: "http://localhost:7438/api/",
-            loginImg: "../assets/logo.png",
+            loginImg: "../assets/login.png",
             UserInfoData: {
                 userName: "",
                 userPass: "",
@@ -188,6 +132,19 @@ export default {
 </script>
 
 <style>
+.father{
+width:100%;
+height:100%;
+display:relative;
+}
+.son{
+position:absolute;
+top:0;
+right:0;
+bottom:0;
+left:0;
+margin:auto;
+}
 #home {
     width: 100%;
     height: 100vh;
