@@ -10,14 +10,14 @@ const app = createApp(App)
 app.config.globalProperties.$axios = axios
 app.use(element).use(store).use(router).mount('#app')
 
-// 添加请求拦截器，在请求头中加token
-// axios.interceptors.request.use(
-//     config => {
-//         if (window.sessionStorage["token"]) {
-//             config.headers.Authorization = window.sessionStorage["token"];
-//         }
-//         return config;
-//     },
-//     error => {
-//         return Promise.reject(error);
-//     });
+//添加请求拦截器，在请求头中加token
+axios.interceptors.request.use(
+    config => {
+        if (window.sessionStorage["token"]) {
+            config.headers.Authorization = window.sessionStorage["token"];
+        }
+        return config;
+    },
+    error => {
+        return Promise.reject(error);
+    });

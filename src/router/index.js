@@ -4,12 +4,12 @@ import Login from '../views/Login.vue'
 
 const routes = [
     {
-        path: '/',
+        path: '/Home',
         name: 'Home',
         component: Home
     },
     {
-        path: '/Login',
+        path: '/',
         name: 'Login',
         component: Login
     },
@@ -28,7 +28,7 @@ const router = createRouter({
     routes
 })
 
-// //路由导航守卫
+//路由导航守卫
 // router.beforeEach((to, from, next) => {
 //     if (to.path == '/login') {
 //         next();
