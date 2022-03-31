@@ -106,7 +106,7 @@ export default {
         //跳转到支付宝登录
         JumpToAlipayLogin() {
             location.href =
-                "https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2021003125650409&scope=auth_user&redirect_uri=http://www.iotabp.top:16157/Order";
+                "https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2021003125650409&scope=auth_user&redirect_uri=http://www.iotabp.top:16157/Menu";
         },
         //登录
         Login() {
