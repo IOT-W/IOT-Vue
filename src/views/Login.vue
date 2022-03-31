@@ -74,6 +74,7 @@
                     </label>
                     <el-button
                         type="text"
+                        @click="JumpToAlipayLogin"
                         style="
                             position: relative;
                             left: 30px;
@@ -81,7 +82,7 @@
                             float: left;
                             margin-bottom: 15px;
                         "
-                        >sign up for a new account. </el-button
+                        >Log in using Alipay. </el-button
                     ><br /><br /><br />
                 </div>
             </div>
@@ -102,6 +103,12 @@ export default {
         };
     },
     methods: {
+        //跳转到支付宝登录
+        JumpToAlipayLogin() {
+            location.href =
+                "https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2021003125650409&scope=auth_user&redirect_uri=http://www.iotabp.top:16157/Order";
+        },
+        //登录
         Login() {
             this.$axios({
                 url: this.baseUrl + "Login",
@@ -126,25 +133,58 @@ export default {
                 console.log(res.data);
             });
         },
+
+        RequestUserCode() {
+            this.$ajax({
+                url: "http://www.iotabp.top/api/app/login/request-user-code",
+                method: "post",
+                params: {
+                    rCode: this.$route.query.auth_code,
+                },
+            }).then((r) => {
+                this.asotr = r.data.alipay_system_oauth_token_response;
+                this.RequestAlipayUserInfo();
+            });
+        },
+        RequestAlipayUserInfo() {
+            this.$ajax({
+                url: "http://www.iotabp.top/api/app/login/user-info",
+                method: "get",
+                params: {
+                    authCode: this.asotr.access_token,
+                },
+            }).then((r) => {
+                this.userInfo = r.data.alipay_user_info_share_response;
+                if (this.userInfo.nick_name == undefined) {
+                    this.userInfo.nick_name = "无昵称";
+                    console.log(this.userInfo);
+                }
+                this.firstName = this.userInfo.nick_name.substr(0, 1);
+                this.lastName = this.userInfo.nick_name.substr(1);
+                this.QueryExistUser();
+            });
+        },
         //---------------
     },
 };
 </script>
 
 <style>
-.father{
-width:100%;
-height:100%;
-display:relative;
+.father {
+    width: 100%;
+    height: 100%;
+    display: relative;
 }
-.son{
-position:absolute;
-top:0;
-right:0;
-bottom:0;
-left:0;
-margin:auto;
+
+.son {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
 }
+
 #home {
     width: 100%;
     height: 100vh;
