@@ -35,7 +35,7 @@
                     <el-menu
                         style="height: 92vh; width: 250px"
                         :unique-opened="true"
-                        active-text-color="#ffd04b"Wu
+                        active-text-color="#ffd04b"
                         background-color="#545c64"
                         text-color="#fff"
                         :default-openeds="['1']"
