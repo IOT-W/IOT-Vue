@@ -94,7 +94,6 @@
 export default {
     data() {
         return {
-            baseUrl: "http://localhost:7438/api/",
             loginImg: "../assets/login.png",
             UserInfoData: {
                 userName: "",
@@ -106,62 +105,31 @@ export default {
         //跳转到支付宝登录
         JumpToAlipayLogin() {
             location.href =
-                "https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2021003125650409&scope=auth_user&redirect_uri=http://www.iotabp.top:16157/Menu";
+                "https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2021003125650409&scope=auth_user&redirect_uri=http://www.iotvue.xyz/Menu";
         },
         //登录
         Login() {
             this.$axios({
-                url: this.baseUrl + "Login",
-                method: "post",
-                data: this.UserInfoData,
-            }).then((res) => {
-                if (res.data == 0) {
-                    window.sessionStorage.removeItem("token");
-                    this.$message.warning("登录失败");
-                } else {
-                    //存储当前登录人的账号密码
-                    window.sessionStorage["account"] =
-                        this.UserInfoData.userName;
-                    window.sessionStorage["password"] =
-                        this.UserInfoData.userPass;
-                    //存储token
-                    window.sessionStorage.removeItem("token");
-                    window.sessionStorage["token"] = "Bearer " + res.data;
-                    this.$message.success("登录成功");
-                    this.$router.push("Menu");
-                }
-                console.log(res.data);
-            });
-        },
-
-        RequestUserCode() {
-            this.$ajax({
-                url: "http://www.iotabp.top/api/app/login/request-user-code",
-                method: "post",
-                params: {
-                    rCode: this.$route.query.auth_code,
-                },
-            }).then((r) => {
-                this.asotr = r.data.alipay_system_oauth_token_response;
-                this.RequestAlipayUserInfo();
-            });
-        },
-        RequestAlipayUserInfo() {
-            this.$ajax({
-                url: "http://www.iotabp.top/api/app/login/user-info",
+                url: "http://www.iotabp.top/api/Login",
                 method: "get",
                 params: {
-                    authCode: this.asotr.access_token,
+                    name: this.UserInfoData.userName,
+                    pwd: this.UserInfoData.userPass,
                 },
-            }).then((r) => {
-                this.userInfo = r.data.alipay_user_info_share_response;
-                if (this.userInfo.nick_name == undefined) {
-                    this.userInfo.nick_name = "无昵称";
-                    console.log(this.userInfo);
+            }).then((res) => {
+                console.log(res.data);
+                if (res.data != "") {
+                    this.$router.push({
+                        name: "Menu",
+                        query: {
+                            avatar: res.data.login_avatar,
+                            nick_name: res.data.login_name,
+                        },
+                    });
+                    this.$message.success("登录成功");
+                } else {
+                    this.$message.warning("登录失败");
                 }
-                this.firstName = this.userInfo.nick_name.substr(0, 1);
-                this.lastName = this.userInfo.nick_name.substr(1);
-                this.QueryExistUser();
             });
         },
         //---------------

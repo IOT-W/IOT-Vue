@@ -4,8 +4,8 @@ import router from './router'
 import store from './store'
 
 import axios from 'axios'
-import element from 'element-plus'
-import 'element-plus/theme-chalk/index.css'
+import element from 'element-plus'//饿了么组件
+import 'element-plus/theme-chalk/index.css'//饿了么组件样式引用
 const app = createApp(App)
 app.config.globalProperties.$axios = axios
 app.use(element).use(store).use(router).mount('#app')
