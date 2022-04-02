@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Order from '../views/Order.vue'
 import Menu from '../views/Menu.vue'
+import GWC from '../views/GWC.vue'
 
 const routes = [
     {
@@ -24,6 +25,11 @@ const routes = [
         path: '/Menu',
         name: 'Menu',
         component: Menu
+    },
+    {
+        path: '/GWC',
+        name: 'GWC',
+        component: GWC
     },
     {
         path: '/about',
