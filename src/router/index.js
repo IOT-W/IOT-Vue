@@ -7,6 +7,8 @@ import GWC from '../views/GWC.vue'
 import BrandShow from '../views/BrandShow.vue' //品牌列表
 import BrandAdd from '../views/BrandAdd.vue'   //新建品牌
 import ClassifyShow from '../views/ClassifyShow.vue'   //新建品牌
+import Goods from '../views/Goods.vue'
+
 const routes = [
     {
         path: '/',
@@ -52,6 +54,11 @@ const routes = [
         path: '/GWC',
         name: 'GWC',
         component: GWC
+    },
+    {
+        path: '/Goods',
+        name: 'Goods',
+        component: Goods
     },
     {
         path: '/about',
