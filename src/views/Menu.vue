@@ -69,7 +69,7 @@
                             >
                         </el-sub-menu>
                         <el-sub-menu index="2">
-                            <template #title> 公司资产管理 </template>
+                            <template #title> 商品管理 </template>
                             <el-menu-item
                                 index="2-1"
                                 @click="Goto('AssetsApply')"

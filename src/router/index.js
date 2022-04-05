@@ -4,6 +4,7 @@ import Login from '../views/Login.vue'
 import Order from '../views/Order.vue'
 import Menu from '../views/Menu.vue'
 import GWC from '../views/GWC.vue'
+import Goods from '../views/Goods.vue'
 
 const routes = [
     {
@@ -30,6 +31,11 @@ const routes = [
         path: '/GWC',
         name: 'GWC',
         component: GWC
+    },
+    {
+        path: '/Goods',
+        name: 'Goods',
+        component: Goods
     },
     {
         path: '/about',
