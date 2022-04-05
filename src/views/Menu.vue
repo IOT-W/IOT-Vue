@@ -41,35 +41,21 @@
                         :default-openeds="['1']"
                     >
                         <el-sub-menu index="1">
-                            <template #title> 人事行政管理 </template>
+                            <template #title> 品牌管理 </template>
                             <el-menu-item
                                 index="1-1"
-                                @click="Goto('LaunchApplication')"
-                                >发起申请</el-menu-item
+                                @click="Goto('BrandShow')"
+                                >品牌展示</el-menu-item
                             >
                             <el-menu-item
                                 index="1-2"
-                                @click="Goto('PendingApplication')"
-                                >待处理申请</el-menu-item
+                                @click="Goto('BrandAdd')"
+                                >新建品牌</el-menu-item
                             >
-                            <el-menu-item
-                                index="1-3"
-                                @click="Goto('ProcessedApplication')"
-                                >已处理申请</el-menu-item
-                            >
-                            <el-menu-item
-                                index="1-4"
-                                @click="Goto('MyApplication')"
-                                >我的申请</el-menu-item
-                            >
-                            <el-menu-item
-                                index="1-5"
-                                @click="Goto('EndApplication')"
-                                >已完成申请</el-menu-item
-                            >
+                           
                         </el-sub-menu>
                         <el-sub-menu index="2">
-                            <template #title> 公司资产管理 </template>
+                            <template #title> 商品管理 </template>
                             <el-menu-item
                                 index="2-1"
                                 @click="Goto('AssetsApply')"
@@ -103,6 +89,22 @@
                             >
                             <el-menu-item
                                 index="3-3"
+                                @click="Goto('Maintenancemanagement')"
+                                >维护管理</el-menu-item
+                            >
+                        </el-sub-menu>
+                        <el-sub-menu index="4">
+                            <template #title> 分类管理 </template>
+                            <el-menu-item
+                                index="4-1"
+                                @click="Goto('ClassifyShow')"
+                                >分类列表</el-menu-item
+                            >
+                            <el-menu-item index="4-2" @click="Goto('')"
+                                >添加分类</el-menu-item
+                            >
+                            <el-menu-item
+                                index="4-3"
                                 @click="Goto('Maintenancemanagement')"
                                 >维护管理</el-menu-item
                             >

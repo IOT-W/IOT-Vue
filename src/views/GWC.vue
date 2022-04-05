@@ -7,7 +7,7 @@
             :data="tableData"
             style="width: 100%"
             v-loading="loading"
-            element-loading-text="Loading..."
+            element-loading-text="Loading..." 
             @selection-change="handleSelectionChange"
             :cell-style="{ 'text-align': 'center' }"
             :header-cell-style="{ 'text-align': 'center' }"

@@ -4,7 +4,9 @@ import Login from '../views/Login.vue'
 import Order from '../views/Order.vue'
 import Menu from '../views/Menu.vue'
 import GWC from '../views/GWC.vue'
-
+import BrandShow from '../views/BrandShow.vue' //品牌列表
+import BrandAdd from '../views/BrandAdd.vue'   //新建品牌
+import ClassifyShow from '../views/ClassifyShow.vue'   //新建品牌
 const routes = [
     {
         path: '/',
@@ -24,7 +26,27 @@ const routes = [
     {
         path: '/Menu',
         name: 'Menu',
-        component: Menu
+        component: Menu,
+        children:[
+            {
+                 //品牌显示
+                 path: '/BrandShow',
+                 name: 'BrandShow',
+                 component: BrandShow
+            },
+            {
+                //新建品牌
+                path: '/BrandAdd',
+                name: 'BrandAdd',
+                component: BrandAdd
+           },
+           {
+            //添加分类
+            path: '/ClassifyShow',
+            name: 'ClassifyShow',
+            component: ClassifyShow
+       }
+        ]
     },
     {
         path: '/GWC',
